@@ -12,6 +12,9 @@ public class TheOkay extends Robot
 	/**
 	 * run: TheOkay's default behavior
 	 */
+	int[] p = {1, 4, 2, 3, 4};
+	int i = 0;
+	
 	public void run() {
 		// Initialization of the robot should be put here 
 		
@@ -44,8 +47,13 @@ public class TheOkay extends Robot
 	public void  onScannedRobot(ScannedRobotEvent e) {
        //fire(1);
 // Assuming radar and gun are aligned...
-       if (e.getDistance() >200) {
-           fire(4);
+       if (e.getDistance() < 200) {
+          fire(p[i]);
+		  i++;
+		  if (i > p.length) {
+			i = 0;
+		}
+		  
        } else {
            fire(2);
 		   
@@ -59,7 +67,9 @@ public class TheOkay extends Robot
 		// Replace the next line with any behavior you would like
 		//back(5);
 	//	ahead(3);
-	}
+	
+				
+		}
 	
 	/**
 	 * onHitWall: What to do when you hit a wall
