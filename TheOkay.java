@@ -12,7 +12,7 @@ public class TheOkay extends Robot
 	/**
 	 * run: TheOkay's default behavior
 	 */
-	int[] p = {1, 4, 2, 3, 4};
+	int[] p = {3, 4, 2, 3, 4};
 	int i = 0;
 	
 	public void run() {
